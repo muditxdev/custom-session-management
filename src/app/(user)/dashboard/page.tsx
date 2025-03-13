@@ -1,19 +1,23 @@
+import Link from "next/link";
+
 export default function UserDashboard() {
-    return (
-      <div className="bg-white p-6 rounded-lg shadow-md">
-        <h1 className="text-2xl font-bold mb-4">User Dashboard</h1>
-        <p className="text-gray-600">
-          Welcome to your user dashboard. This content is only visible to logged in users.
-        </p>
-        <div className="mt-8 p-4 bg-indigo-50 rounded-md">
-          <h2 className="text-lg font-semibold mb-2">User Features</h2>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>View your profile</li>
-            <li>Manage your settings</li>
-            <li>Access user-specific content</li>
-          </ul>
-        </div>
-      </div>
-    );
-  }
-  
+  return (
+    <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+      <h1 className="text-2xl font-bold mb-4 dark:text-white">
+        User Dashboard
+      </h1>
+      <p className="text-gray-600 dark:text-gray-300">
+        Welcome to your user dashboard. This content is only visible to logged
+        in users.
+      </p>
+      <Link href="/admin/auth/signin" target="_blank">
+        <button
+          type="button"
+          className="mr-2 bg-red-600 text-white mt-4 py-2 px-3 rounded cursor-pointer"
+        >
+          Admin Login
+        </button>
+      </Link>
+    </div>
+  );
+}
